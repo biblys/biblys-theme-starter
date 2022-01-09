@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} | {{ app.site.title }}</title>
+
+    {# theme assets #}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="/theme/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <img src="/theme/logo.png" alt="Logo de {{ app.site.title }}" class="site-logo">
+    <div class="header-bar">
+      <div class="social-networks">
+        <a class="social-button" href="https://www.facebook.com/biblys" target="_blank" rel="noreferrer noopener">
+          <span aria-label="Facebook" class="fa fa-facebook-square"></span>
+        </a>
+
+        <a class="social-button" href="https://twitter.com/biblys" target="_blank" rel="noreferrer noopener">
+          <span aria-label="Twitter" class="fa fa-twitter-square"></span>
+        </a>
+
+        <a class="social-button" href="https://www.instagram.com/jiffpom/" target="_blank" rel="noreferrer noopener">
+          <span aria-label="Instagram" class="fa fa-instagram"></span>
+        </a>
+      </div>
+
+      <div class="cart-button">
+        <button>
+          <span class="fa fa-shopping-cart"></span>
+          Panier vide
+        </button>
+      </div>
+
+      <form action="/articles/search" class="search-engine">
+        <input
+          type="text"
+          name="q"
+          placeholder="Rechercher un article…"
+          aria-label="Rechercher un article"
+          class="search-engine-input"
+          required="required"
+        />
+        <button aria-label="Rechercher" type="submit" class="search-engine-button">
+          <span class="fa fa-search"></span>
+        </button>
+      </form>
+    </div>
+  </header>
+  <main class="site-main">
+    {% block main %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    footer
+  </footer>
+</body>
+</html>
+

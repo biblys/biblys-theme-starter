@@ -1,0 +1,95 @@
+:root {
+  --grey-25: rgba(0, 0, 0, 0.25);
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* # Layout */
+
+.site-header,
+.site-main,
+.site-footer {
+  padding: 0 16px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* ## Header */
+
+.site-header .site-logo {
+  display: block;
+  margin: 16px auto;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* ### Header bar */
+
+.site-header .header-bar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.site-header .header-bar .social-networks .social-button .fa {
+  color: var(--grey-25);
+  font-size: 2.5rem;
+}
+
+.site-header .header-bar .search-engine {
+  background: var(--grey-25);
+  display: flex;
+  font-size: inherit;
+  margin-top: 4px;
+  padding: 2px;
+  width: 100%;
+}
+
+.site-header .header-bar .search-engine-input {
+  border: 0;
+  font-size: 1.6rem;
+  padding: 4px;
+  width: 100%;
+}
+
+.site-header .header-bar .search-engine-button {
+  border: 0;
+  background: white;
+}
+
+@media(min-width: 768px) {
+  .site-header .header-bar .social-networks {
+    order: 1;
+  }
+
+  .site-header .header-bar .cart-button {
+    order: 3;
+  }
+
+  .site-header .header-bar .search-engine {
+    margin-top: 0;
+    order: 2;
+    width: 50%;
+  }
+}
+
+/* ## Main */
+
+.site-main {
+  border-top: 1px solid var(--grey-25);
+  border-bottom: 1px solid var(--grey-25);
+  margin: 16px auto;
+  padding: 16px;
+}
