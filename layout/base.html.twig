@@ -62,6 +62,38 @@
         </button>
       </form>
     </div>
+
+    <ul role="navigation" class="site-navigation">
+      <li class="navigation-item">
+        <a class="navigation-item-link" href="/">Accueil</a>
+      </li>
+      <li class="navigation-item">
+        <a class="navigation-item-link" href="/blog/">Blog</a>
+      </li>
+      <li class="navigation-item">
+        <a role="button" class="sub-navigation-header">Rayons</a>
+        <ul class="sub-navigation">
+          <li class="navigation-item">
+            <a class="navigation-item-link" href="/rayon/litterature-generale">Littérature générale</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-item-link" href="/rayon/">Science-fiction</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-item-link" href="/rayon/">Polar</a>
+          </li>
+        </ul>
+      </li>
+      <li class="navigation-item">
+        <a class="navigation-item-link" href="/rayon/coups-de-coeur">Coups de coeur</a>
+      </li>
+      <li class="navigation-item">
+        <a class="navigation-item-link" href="/pages/a-propos">À propos</a>
+      </li>
+      <li class="navigation-item">
+        <a class="navigation-item-link" href="/contact/">Contact</a>
+      </li>
+    </ul>
   </header>
   <main class="site-main">
     {% block main %}{% endblock %}
