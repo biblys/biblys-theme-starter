@@ -20,9 +20,10 @@ a {
 .site-header,
 .site-main,
 .site-footer {
+  box-sizing: border-box;
   padding: 0 16px;
-  max-width: 1024px;
   margin: 0 auto;
+  max-width: 1024px;
 }
 
 /* ## Header */
@@ -136,4 +137,25 @@ a {
   border-bottom: 1px solid var(--grey-25);
   margin: 16px auto;
   padding: 16px;
+}
+
+/* ## Footer */
+
+.site-footer .footer-block {
+  margin-bottom: 16px;
+}
+
+@media(min-width: 768px) {
+  .site-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .site-footer .footer-block {
+    width: 240px;
+  }
+
+  .site-footer .footer-biblys-logo {
+    text-align: center;
+  }
 }
