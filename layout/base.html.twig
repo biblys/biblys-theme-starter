@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %} | {{ app.site.title }}</title>
 
-    {# theme assets #}
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -13,6 +12,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    {# biblys assets #}
+    {% include "layout:_assets_css.html.twig" %}
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -22,87 +25,87 @@
     />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="/theme/styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <img src="/theme/logo.png" alt="Logo de {{ app.site.title }}" class="site-logo">
-    <div class="header-bar">
-      <div class="social-networks">
-        <a class="social-button" href="https://www.facebook.com/biblys" target="_blank" rel="noreferrer noopener">
-          <span aria-label="Facebook" class="fa fa-facebook-square"></span>
-        </a>
+  </head>
+  <body>
+    <header class="site-header">
+      <img src="/theme/logo.png" alt="Logo de {{ app.site.title }}" class="site-logo">
+      <div class="header-bar">
+        <div class="social-networks">
+          <a class="social-button" href="https://www.facebook.com/biblys" target="_blank" rel="noreferrer noopener">
+            <span aria-label="Facebook" class="fa fa-facebook-square"></span>
+          </a>
 
-        <a class="social-button" href="https://twitter.com/biblys" target="_blank" rel="noreferrer noopener">
-          <span aria-label="Twitter" class="fa fa-twitter-square"></span>
-        </a>
+          <a class="social-button" href="https://twitter.com/biblys" target="_blank" rel="noreferrer noopener">
+            <span aria-label="Twitter" class="fa fa-twitter-square"></span>
+          </a>
 
-        <a class="social-button" href="https://www.instagram.com/jiffpom/" target="_blank" rel="noreferrer noopener">
-          <span aria-label="Instagram" class="fa fa-instagram"></span>
-        </a>
+          <a class="social-button" href="https://www.instagram.com/jiffpom/" target="_blank" rel="noreferrer noopener">
+            <span aria-label="Instagram" class="fa fa-instagram"></span>
+          </a>
+        </div>
+
+        <div class="cart-button">
+          <button>
+            <span class="fa fa-shopping-cart"></span>
+            Panier vide
+          </button>
+        </div>
+
+        <form action="/articles/search" class="search-engine">
+          <input
+              type="text"
+              name="q"
+              placeholder="Rechercher un article…"
+              aria-label="Rechercher un article"
+              class="search-engine-input"
+              required="required"
+          />
+          <button aria-label="Rechercher" type="submit" class="search-engine-button">
+            <span class="fa fa-search"></span>
+          </button>
+        </form>
       </div>
 
-      <div class="cart-button">
-        <button>
-          <span class="fa fa-shopping-cart"></span>
-          Panier vide
-        </button>
-      </div>
-
-      <form action="/articles/search" class="search-engine">
-        <input
-          type="text"
-          name="q"
-          placeholder="Rechercher un article…"
-          aria-label="Rechercher un article"
-          class="search-engine-input"
-          required="required"
-        />
-        <button aria-label="Rechercher" type="submit" class="search-engine-button">
-          <span class="fa fa-search"></span>
-        </button>
-      </form>
-    </div>
-
-    <ul role="navigation" class="site-navigation">
-      <li class="navigation-item">
-        <a class="navigation-item-link" href="/">Accueil</a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-item-link" href="/blog/">Blog</a>
-      </li>
-      <li class="navigation-item">
-        <a role="button" class="sub-navigation-header">Rayons</a>
-        <ul class="sub-navigation">
-          <li class="navigation-item">
-            <a class="navigation-item-link" href="/rayon/litterature-generale">Littérature générale</a>
-          </li>
-          <li class="navigation-item">
-            <a class="navigation-item-link" href="/rayon/">Science-fiction</a>
-          </li>
-          <li class="navigation-item">
-            <a class="navigation-item-link" href="/rayon/">Polar</a>
-          </li>
-        </ul>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-item-link" href="/rayon/coups-de-coeur">Coups de coeur</a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-item-link" href="/pages/a-propos">À propos</a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-item-link" href="/contact/">Contact</a>
-      </li>
-    </ul>
-  </header>
-  <main class="site-main">
-    {% block main %}{% endblock %}
-  </main>
-  <footer class="site-footer">
-    footer
-  </footer>
-  {{ app.axysMenu|raw }}
-  <script type="text/javascript" src="{{ app.axys.widgetUrl }}"></script>
-</body>
+      <ul role="navigation" class="site-navigation">
+        <li class="navigation-item">
+          <a class="navigation-item-link" href="/">Accueil</a>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-item-link" href="/blog/">Blog</a>
+        </li>
+        <li class="navigation-item">
+          <a role="button" class="sub-navigation-header">Rayons</a>
+          <ul class="sub-navigation">
+            <li class="navigation-item">
+              <a class="navigation-item-link" href="/rayon/litterature-generale">Littérature générale</a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-item-link" href="/rayon/">Science-fiction</a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-item-link" href="/rayon/">Polar</a>
+            </li>
+          </ul>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-item-link" href="/rayon/coups-de-coeur">Coups de coeur</a>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-item-link" href="/pages/a-propos">À propos</a>
+        </li>
+        <li class="navigation-item">
+          <a class="navigation-item-link" href="/contact/">Contact</a>
+        </li>
+      </ul>
+    </header>
+    <main class="site-main">
+      {% block main %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+      footer
+    </footer>
+    {{ app.axysMenu|raw }}
+    {% include "layout:_assets_js.html.twig" %}
+  </body>
 </html>
 
