@@ -1,0 +1,104 @@
+{% extends "layout:base.html.twig" %}
+
+{% block title %}
+  {{  article.title }}
+{% endblock %}
+
+{% block main %}
+
+  <article class="article">
+    <div class="article__cover-column">
+      {% if article.hasCover %}
+        {{ article.getCoverTag({
+          class: "article__cover-image",
+          rel: "lightbox"
+        })|raw }}
+      {% endif %}
+    </div>
+
+    <div class="article__infos-column">
+
+      {% if article.has('cycle') %}
+        <p class="article__cycle">
+          <a href="{{ path('cycle_show', { slug: article.cycle.url }) }}">
+            {{ article.cycle.name }}
+          </a>
+          {% if article.has('tome') %}
+            -
+            {{ article.tome }}
+          {% endif %}
+        </p>
+      {% endif %}
+
+      <h1 class="article__title">{{ article.title }}</h1>
+
+      <div class="article__authors-and-contributors">
+        <p class="article__authors">
+          <span class="article__by">de</span>
+          {% for author in article.getAuthors() %}
+            <a href="{{ path('people_show', { slug: author.url }) }}">
+              {{ author.name }}</a>{% if not loop.last %},
+            {% endif %}
+          {% endfor %}
+        </p>
+
+        <p class="article__contributors">
+          {% if article.hasOtherContributors() %}
+            et
+            {% for people in article.getOtherContributors %}
+              <a href="{{ path('people_show', { slug: people.url }) }}">{{ people.name }}</a>
+                ({{ people.role}})
+                {% if not loop.last %},
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </p>
+      </div>
+
+      {% set newItem = article.getCheapestAvailableItem('new') %}
+      {% if newItem %}
+        <p>
+          <span class="fa fa-square led-green"></span>
+          <strong>Neuf</strong>
+          {{ newItem.selling_price|currency(true)|raw }}
+          {{ newItem.getCartButton('Ajouter')|raw }}
+        </p>
+      {% endif %}
+
+      {% for usedItem in article.getAvailableItems('used') %}
+        <p>
+          <span class="fa fa-square led-orange"></span>
+          <strong>Occasion</strong>
+          (État: {{ usedItem.condition }})
+          {{ usedItem.selling_price|currency(true)|raw }}
+          {{ usedItem.getCartButton('Ajouter')|raw }}
+        </p>
+      {% endfor %}
+
+      {% if article.has('ean') %}
+        <p>
+          EAN : {{ article.ean }}<br>
+          ISBN : {{ article.isbn }}
+        </p>
+      {% endif %}
+
+
+      {% if article.has('summary') %}
+        <div class="article-summary">
+          {{ article.summary|raw }}
+        </div>
+      {% endif %}
+    </div>
+
+
+  </article>
+
+  {% if app.user.isAdmin %}
+    <div class="admin">
+      <p>Article n° {{ article.id }}</p>
+      <p><a href="/pages/adm_article?id={{ article.id }}">modifier</a></p>
+      <p><a href="/pages/adm_stocks?article_id={{ article.id }}">stock</a></p>
+      <p><a href="/pages/adm_stock?add={{ article.id }}">ajouter</a></p>
+    </div>
+  {% endif %}
+{% endblock %}
