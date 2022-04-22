@@ -1,0 +1,56 @@
+<div class="article-list">
+	{% for article in articles|filter(article => article.has('url')) %}
+		<article class="article-in-list">
+
+			{% if article.hasCover %}
+				<div class="article-in-list__cover">
+					{{ article.getCoverTag({
+						link: path('article_show', { slug: article.url }),
+						class: 'article-in-list__cover-image'
+					})|raw }}
+				</div>
+			{% endif %}
+
+			<div class="article-in-list__infos">
+				{% if article.has('cycle') %}
+					<div class="article-in-list__cycle">
+						{{ article.cycle.name }}
+						{% if article.has('tome') %}
+							<span class="article-in-list__tome">
+								{{ ' - ' ~ article.tome }}
+							</span>
+						{% endif %}
+					</div>
+				{% endif %}
+				<h1 class="article-in-list__title">
+					<a href="{{ path('article_show', { slug: article.url }) }}">
+						{{ article.title }}
+					</a>
+				</h1>
+				<p class="article-in-list__authors">
+					{{ article.authors|authors }}
+				</p>
+
+				<p>
+					{% set newItem = article.getCheapestAvailableItem('new') %}
+					{% if newItem %}
+						<span class="fa fa-square led-green"></span>
+						<strong>Neuf</strong>
+						{{ newItem.selling_price|currency(true)|raw }}
+						<br />
+					{% endif %}
+
+					{% set usedItem = article.getCheapestAvailableItem('used') %}
+					{% if usedItem %}
+						<span class="fa fa-square led-orange"></span>
+						<strong>Occasion</strong>
+						à partir de
+						{{ usedItem.selling_price|currency(true)|raw }}
+					{% endif %}
+				</p>
+			</div>
+		</article>
+	{% endfor %}
+</div>
+
+{% include 'AppBundle:Article:_list_pagination.html.twig' %}

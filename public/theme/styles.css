@@ -159,3 +159,43 @@ a {
     text-align: center;
   }
 }
+
+/* # Article list */
+
+.article-in-list {
+  display: flex;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.article-in-list__cover-image {
+  display: block;
+  margin: 0 auto;
+  width: 96px;
+}
+
+.article-in-list__infos {
+  padding: 0 8px;
+}
+
+.article-in-list__title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.article-in-list__cycle,
+.article-in-list__title,
+.article-in-list__authors {
+  margin-bottom: .5rem;
+}
+
+@media(min-width: 768px) {
+  .article-in-list__cover-image {
+    width: 160px;
+  }
+
+  .article-in-list__title {
+    font-size: 2rem;
+  }
+}
+
