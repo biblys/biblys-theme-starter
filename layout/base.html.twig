@@ -45,10 +45,7 @@
         </div>
 
         <div class="cart-button">
-          <button>
-            <span class="fa fa-shopping-cart"></span>
-            Panier vide
-          </button>
+          {{ cart_status()|raw }}
         </div>
 
         <form action="/articles/search" class="search-engine">
