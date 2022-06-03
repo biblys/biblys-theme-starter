@@ -61,6 +61,7 @@ a {
 .site-header .header-bar .search-engine-input {
   border: 0;
   font-size: 1.6rem;
+  margin-top: 0;
   padding: 4px;
   width: 100%;
 }
