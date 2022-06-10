@@ -75,12 +75,13 @@ a {
 @media(min-width: 768px) {
   .site-header .header-bar .social-networks {
     order: 1;
-    min-width: 100px;
+    min-width: 150px;
   }
 
   .site-header .header-bar .cart-button {
     order: 3;
-    min-width: 100px;
+    min-width: 150px;
+    text-align: right;
   }
 
   .site-header .header-bar .search-engine {
