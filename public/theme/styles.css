@@ -249,6 +249,15 @@ a {
   display: none;
 }
 
+.article-in-list__available-new-item,
+.article-in-list__available-used-items {
+  text-align: center;
+}
+
+.article-in-list__available-new-item .cart-button {
+  margin-top: 2px;
+}
+
 @media(min-width: 768px) {
   .article-in-list__cover-image {
     width: 160px;

@@ -44,21 +44,30 @@
 					(<a href="{{ path('publisher_show', { slug: article.publisher.url }) }}">{{ article.publisher.name }}</a>)
 				</p>
 
-				<p>
+				<p class="article-in-list__available-items">
 					{% set newItem = article.getCheapestAvailableItem('new') %}
 					{% if newItem %}
-						<span class="fa fa-square led-green"></span>
-						<strong>Neuf</strong>
-						{{ newItem.selling_price|currency(true)|raw }}
-						<br />
+						<p class="article-in-list__available-new-item">
+							<span class="fa fa-square led-green"></span>
+							<strong>Neuf</strong>
+							{{ newItem.selling_price|currency(true)|raw }}
+							<br />
+							{{ article.cartButton("Ajouter au panier")|raw }}
+						</p>
 					{% endif %}
 
 					{% set usedItem = article.getCheapestAvailableItem('used') %}
 					{% if usedItem %}
-						<span class="fa fa-square led-orange"></span>
-						<strong>Occasion</strong>
-						à partir de
-						{{ usedItem.selling_price|currency(true)|raw }}
+						<p class="article-in-list__available-used-items">
+							<span class="fa fa-square led-orange"></span>
+							<strong>
+								<a href="{{ path('article_show', { slug: article.url }) }}#occasion">
+									En occasion
+								</a>
+							</strong>
+							à partir de
+							{{ usedItem.selling_price|currency(true)|raw }}
+						</p>
 					{% endif %}
 				</p>
 			</div>

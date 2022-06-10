@@ -81,7 +81,7 @@
 
     {% set usedItems = article.getAvailableItems('used') %}
     {% if usedItems %}
-      <div>
+      <div id="occasion">
         <h2>Exemplaires d'occasion</h2>
         <div class="article__used-copies">
           {% for usedItem in usedItems %}
