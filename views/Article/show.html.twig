@@ -65,23 +65,12 @@
         </p>
       {% endif %}
 
-      {% for usedItem in article.getAvailableItems('used') %}
-        <p>
-          <span class="fa fa-square led-orange"></span>
-          <strong>Occasion</strong>
-          (État: {{ usedItem.condition }})
-          {{ usedItem.selling_price|currency(true)|raw }}
-          {{ usedItem.getCartButton('Ajouter')|raw }}
-        </p>
-      {% endfor %}
-
       {% if article.has('ean') %}
         <p>
           EAN : {{ article.ean }}<br>
           ISBN : {{ article.isbn }}
         </p>
       {% endif %}
-
 
       {% if article.has('summary') %}
         <div class="article-summary">
@@ -90,7 +79,29 @@
       {% endif %}
     </div>
 
-
+    {% set usedItems = article.getAvailableItems('used') %}
+    {% if usedItems %}
+      <div>
+        <h2>Exemplaires d'occasion</h2>
+        <div class="article__used-copies">
+          {% for usedItem in usedItems %}
+            <div class="article__used-copy">
+              {% if usedItem.hasPhoto %}
+                {{ usedItem.photoTag({ class: 'article__used-copy__photo' })|raw }}
+              {% endif %}
+              <p>
+                <span class="fa fa-square led-orange"></span>
+                État: {{ usedItem.condition }}
+              </p>
+              <p>
+                {{ usedItem.selling_price|currency(true)|raw }}
+                {{ usedItem.getCartButton('Ajouter')|raw }}
+              </p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
   </article>
 
   {% if app.user.isAdmin %}
