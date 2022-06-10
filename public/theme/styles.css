@@ -230,6 +230,10 @@ a {
   width: 96px;
 }
 
+.article-in-list__infos-and-items {
+  width: 100%;
+}
+
 .article-in-list__infos {
   padding: 0 8px;
 }
@@ -260,7 +264,15 @@ a {
 
 @media(min-width: 768px) {
   .article-in-list__cover-image {
-    width: 160px;
+    width: 128px;
+  }
+
+  .article-in-list__infos-and-items {
+    display: flex;
+  }
+
+  .article-in-list__infos {
+    width: 100%;
   }
 
   .article-in-list__title {
@@ -269,6 +281,11 @@ a {
 
   .article-in-list__collection-and-publisher {
     display: block;
+  }
+
+  .article-in-list__available-items {
+    flex-shrink: 0;
+    width: 152px;
   }
 }
 
