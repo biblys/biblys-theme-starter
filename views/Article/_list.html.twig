@@ -2,14 +2,14 @@
 	{% for article in articles|filter(article => article.has('url')) %}
 		<article class="article-in-list">
 
-			{% if article.hasCover %}
-				<div class="article-in-list__cover">
+			<div class="article-in-list__cover">
+				{% if article.hasCover %}
 					{{ article.getCoverTag({
 						link: path('article_show', { slug: article.url }),
 						class: 'article-in-list__cover-image'
 					})|raw }}
-				</div>
-			{% endif %}
+				{% endif %}
+			</div>
 
 			<div class="article-in-list__infos-and-items">
 				<div class="article-in-list__infos">

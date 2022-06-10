@@ -224,10 +224,14 @@ a {
   padding-top: 16px;
 }
 
+.article-in-list__cover {
+  width: 96px;
+}
+
 .article-in-list__cover-image {
   display: block;
   margin: 0 auto;
-  width: 96px;
+  max-width: 100%;
 }
 
 .article-in-list__infos-and-items {
@@ -263,7 +267,7 @@ a {
 }
 
 @media(min-width: 768px) {
-  .article-in-list__cover-image {
+  .article-in-list__cover {
     width: 128px;
   }
 
