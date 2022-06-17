@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %} | {{ app.site.title }}</title>
+    <title>
+      {% set titleBlock = block("title") %}
+      {% if titleBlock is not empty %}
+        {% block title %}{% endblock %} |
+      {% endif %}
+      {{ app.site.title }}
+    </title>
 
     <link
       rel="stylesheet"
