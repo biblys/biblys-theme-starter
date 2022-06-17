@@ -81,7 +81,7 @@
 
     {% set usedItems = article.getAvailableItems('used') %}
     {% if usedItems %}
-      <div id="occasion">
+      <div class="article__used-copy-list" id="occasion">
         <h2>Exemplaires d'occasion</h2>
         <div class="article__used-copies">
           {% for usedItem in usedItems %}
@@ -102,6 +102,85 @@
         </div>
       </div>
     {% endif %}
+
+    <div class="article__feature-list">
+      <h2>Caractéristiques</h2>
+      <dl class="article__features">
+        {% if article.has('pubdate') %}
+          <dt>Date de parution</dt>
+          <dl>{{ article.pubdate|date }}</dl>
+        {% endif %}
+
+        {% if article.has('price') %}
+          <dt>Prix éditeur</dt>
+          <dl>{{ article.price|currency(true)|raw }}</dl>
+        {% endif %}
+
+        {% if article.has('publisher') %}
+          <dt>Éditeur</dt>
+          <dl>
+            <a href="{{ path('publisher_show', { slug: article.publisher.url }) }}">
+              {{ article.publisher.name }}
+            </a>
+          </dl>
+        {% endif %}
+
+        {% if article.has('collection') %}
+          <dt>Collection</dt>
+          <dl>
+            <a href="{{ path('collection_show', { slug: article.collection.url }) }}">
+              {{ article.collection.name }}
+            </a>
+            {% if article.has('number') %} n° {{ article.number }} {% endif %}
+          </dl>
+        {% endif %}
+
+        {% if article.has('cycle') %}
+          <dt>Cycle</dt>
+          <dl>
+            <a href="{{ path('cycle_show', { slug: article.cycle.url }) }}">
+              {{ article.cycle.name }}
+            </a>
+            {% if article.has('tome') %} - {{ article.tome }} {% endif %}
+          </dl>
+        {% endif %}
+
+        {% if article.has('ean') %}
+          <dt>EAN</dt>
+          <dl>{{ article.ean }}</dl>
+        {% endif %}
+
+        {% if article.has('isbn') %}
+          <dt>ISBN</dt>
+          <dl>{{ article.isbn }}</dl>
+        {% endif %}
+
+        {% if article.has('shaping') %}
+          <dt>Façonnage</dt>
+          <dl>{{ article.shaping }}</dl>
+        {% endif %}
+
+        {% if article.has('printing_process') %}
+          <dt>Procédé d'impression</dt>
+          <dl>{{ article.printing_process }}</dl>
+        {% endif %}
+
+        {% if article.has('format') %}
+          <dt>Dimensions</dt>
+          <dl>{{ article.format }} format</dl>
+        {% endif %}
+
+        {% if article.has('pages') %}
+          <dt>Nombre de pages</dt>
+          <dl>{{ article.pages }} pages</dl>
+        {% endif %}
+
+        {% if article.has('weight') %}
+          <dt>Poids</dt>
+          <dl>{{ article.weight }} g</dl>
+        {% endif %}
+      </dl>
+    </div>
   </article>
 
   {% if app.user.isAdmin %}

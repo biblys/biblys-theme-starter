@@ -189,6 +189,10 @@ a {
   }
 }
 
+.article__used-copy-list {
+  width: 100%;
+}
+
 .article__used-copies {
   display: flex;
   flex-wrap: wrap;
@@ -208,6 +212,10 @@ a {
   max-width: 250px;
   max-height: 250px;
   margin-bottom: 16px;
+}
+
+.article__feature-list {
+  width: 100%;
 }
 
 /* # Article list */
