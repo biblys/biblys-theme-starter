@@ -307,3 +307,24 @@ em {
   }
 }
 
+/* # Contributor page */
+
+.contributor .contributor__photo {
+  display: block;
+  margin: 16px auto;
+  max-width: 100vw;
+  max-height: 100vw;
+}
+
+@media(min-width: 768px) {
+  .contributor .contributor__informations {
+    display: flex;
+    gap: 16px;
+  }
+
+  .contributor .contributor__photo {
+    margin: 0;
+    max-height: 256px;
+    max-width: 256px;
+  }
+}
