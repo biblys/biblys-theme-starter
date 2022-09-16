@@ -16,6 +16,12 @@ a {
   text-decoration: none;
 }
 
+/* # Typography */
+
+em {
+  font-style: italic;
+}
+
 /* # Layout */
 
 .site-header,
