@@ -224,6 +224,37 @@ em {
   width: 100%;
 }
 
+.article__similar-articles__cover {
+  max-width: 100%;
+}
+
+.article__similar-articles__actions {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+@media(min-width: 768px) {
+  .article__similar-articles__list {
+    align-items: flex-end;
+    justify-content: left;
+    display: flex;
+    gap: 16px;
+  }
+
+  .article__similar-articles__item {
+    width: 25%;
+  }
+}
+
+@media(min-width: 1024px) {
+  .article__similar-articles__item {
+    width: 175px;
+  }
+}
+
 /* # Article list */
 
 .article-list {

@@ -9,10 +9,11 @@
   <article class="article">
     <div class="article__cover-column">
       {% if article.hasCover %}
-        {{ article.getCoverTag({
+        {% include "AppBundle:Article:_cover.html.twig" with {
+          article: articleModel,
           class: "article__cover-image",
           rel: "lightbox"
-        })|raw }}
+        } %}
       {% endif %}
     </div>
 
@@ -61,7 +62,7 @@
           <span class="fa fa-square led-green"></span>
           <strong>Neuf</strong>
           {{ newItem.selling_price|currency(true)|raw }}
-          {{ newItem.getCartButton('Ajouter')|raw }}
+          {% include "AppBundle:Article:_cartButton.html.twig" with { "text": "Ajouter" } %}
         </p>
       {% endif %}
 
@@ -95,8 +96,31 @@
               </p>
               <p>
                 {{ usedItem.selling_price|currency(true)|raw }}
-                {{ usedItem.getCartButton('Ajouter')|raw }}
+                {% include "AppBundle:Article:_cartButton.html.twig" with { "text": "Ajouter" } %}
               </p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if similarArticles %}
+      <div class="article__similar-articles">
+        <h2>Articles similaires</h2>
+        <div class="article__similar-articles__list">
+          {% for similarArticle in similarArticles %}
+            <div class="article__similar-articles__item">
+              {% include "AppBundle:Article:_cover.html.twig" with {
+                article: similarArticle,
+                link: path("article_show", { slug: similarArticle.url }),
+                class: "article__similar-articles__cover"
+              } %}
+              {% if article.has('price') %}
+                <div class="article__similar-articles__actions">
+                  {{ similarArticle.price|currency(true)|raw }}
+                  {% include "AppBundle:Article:_cartButton.html.twig" with { text: "Acheter" } %}
+                </div>
+              {% endif %}
             </div>
           {% endfor %}
         </div>
