@@ -35,6 +35,8 @@
     {% include "layout:_analytics.html.twig" %}
   </head>
   <body>
+    {% include "layout:_overall_menu.html.twig" %}
+
     <header class="site-header">
       <a href="/">
         <img src="/theme/logo.png" alt="Logo de {{ app.site.title }}" class="site-logo">
@@ -119,7 +121,6 @@
         </form>
       </div>
     </footer>
-    {{ app.axysMenu|raw }}
     {% include "layout:_assets_js.html.twig" %}
   </body>
 </html>
