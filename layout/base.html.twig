@@ -8,7 +8,7 @@
       {% if titleBlock is not empty %}
         {% block title %}{% endblock %} |
       {% endif %}
-      {{ app.site.title }}
+      {{ app.currentSite.title }}
     </title>
 
     <link
@@ -30,7 +30,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="/theme/styles.css?{{ app.site.getOpt('assets_version') }}">
+    <link rel="stylesheet" href="/theme/styles.css?{{ app.currentSite.getOption('assets_version') }}">
 
     {% include "layout:_analytics.html.twig" %}
   </head>
@@ -40,7 +40,7 @@
 
     <header class="site-header">
       <a href="/">
-        <img src="/theme/logo.png" alt="Logo de {{ app.site.title }}" class="site-logo">
+        <img src="/theme/logo.png" alt="Logo de {{ app.currentSite.title }}" class="site-logo">
       </a>
       <div class="header-bar">
         <div class="social-networks">
