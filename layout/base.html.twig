@@ -8,7 +8,7 @@
       {% if titleBlock is not empty %}
         {% block title %}{% endblock %} |
       {% endif %}
-      {{ app.currentSite.title }}
+      {{ app.currentSite.site.title }}
     </title>
 
     <link
@@ -40,7 +40,7 @@
 
     <header class="site-header">
       <a href="/">
-        <img src="/theme/logo.png" alt="Logo de {{ app.currentSite.title }}" class="site-logo">
+        <img src="/theme/logo.png" alt="Logo de {{ app.currentSite.site.title }}" class="site-logo">
       </a>
       <div class="header-bar">
         <div class="social-networks">
