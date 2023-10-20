@@ -35,11 +35,10 @@ em {
 
 /* ## Header */
 
-.site-header .site-logo {
-  display: block;
-  margin: 16px auto;
-  max-width: 500px;
-  width: 100%;
+.site-header .site-title {
+  font-size: 5rem;
+  margin: 64px auto;
+  text-align: center;
 }
 
 /* ### Header bar */
