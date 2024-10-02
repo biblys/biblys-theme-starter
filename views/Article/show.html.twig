@@ -8,13 +8,11 @@
 
   <article class="article">
     <div class="article__cover-column">
-      {% if article.hasCover %}
-        {% include "AppBundle:Article:_cover.html.twig" with {
-          article: articleModel,
-          class: "article__cover-image",
-          rel: "lightbox"
-        } %}
-      {% endif %}
+      {% include "AppBundle:Article:_cover.html.twig" with {
+        article: articleModel,
+        class: "article__cover-image",
+        rel: "lightbox"
+      } %}
     </div>
 
     <div class="article__infos-column">
