@@ -17,7 +17,7 @@
           <img src="{{ article.model|imageUrl }}" alt="{{ article.title }}" class="linked-article">
         </a>
         {{ article.getCartButton('Ajouter au panier')|raw }}
-        <a data-wish="{{ article.id }}" class="btn btn-default event">
+        <a data-wish="{{ article.id }}" class="btn btn-outline-secondary event">
           {% if article.isInWishList() %}
             <i class="fa fa-heart red"></i> Dans mes envies
           {% else %}
