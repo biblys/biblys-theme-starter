@@ -5,11 +5,6 @@
 
 html {
   font-family: 'Roboto', sans-serif;
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.6rem;
 }
 
 a {
@@ -36,7 +31,7 @@ em {
 /* ## Header */
 
 .site-header .site-title {
-  font-size: 5rem;
+  font-size: 3rem;
   margin: 64px auto;
   text-align: center;
 }
@@ -52,7 +47,7 @@ em {
 
 .site-header .header-bar .social-networks .social-button .fa {
   color: var(--grey-25);
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .site-header .header-bar .search-engine {
@@ -66,7 +61,7 @@ em {
 
 .site-header .header-bar .search-engine-input {
   border: 0;
-  font-size: 1.6rem;
+  font-size: 1rem;
   margin-top: 0;
   padding: 4px;
   width: 100%;
@@ -117,7 +112,7 @@ em {
     border-radius: 0;
     background-color: var(--grey-25);
     flex-direction: row;
-    font-size: 1.75rem;
+    font-size: 1.1rem;
     justify-content: space-evenly;
     padding: 4px 0;
   }
@@ -273,7 +268,7 @@ em {
 .article-in-list {
   border-top: 1px solid var(--grey-15);
   display: flex;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   margin: 16px 0;
   padding-top: 16px;
 }
@@ -297,14 +292,14 @@ em {
 }
 
 .article-in-list__title {
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   margin: 0;
 }
 
 .article-in-list__cycle,
 .article-in-list__title,
 .article-in-list__authors {
-  margin-bottom: .5rem;
+  margin-bottom: .3rem;
 }
 
 .article-in-list__collection-and-publisher {
@@ -334,7 +329,7 @@ em {
   }
 
   .article-in-list__title {
-    font-size: 2.2rem;
+    font-size: 1.375rem;
   }
 
   .article-in-list__collection-and-publisher {
