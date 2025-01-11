@@ -3,12 +3,13 @@
 		<article class="article-in-list">
 
 			<div class="article-in-list__cover">
-				{% if article.hasCover %}
-					{{ article.getCoverTag({
-						link: path('article_show', { slug: article.url }),
-						class: 'article-in-list__cover-image'
-					})|raw }}
-				{% endif %}
+        {% if article.model|hasImage %}
+          {% include "AppBundle:Article:_cover.html.twig" with {
+            article: article.model,
+            link: path('article_show', { slug: article.url }),
+            class: 'article-in-list__cover-image'
+          } %}
+        {% endif %}
 			</div>
 
 			<div class="article-in-list__infos-and-items">
