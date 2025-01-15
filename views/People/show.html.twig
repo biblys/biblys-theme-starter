@@ -11,12 +11,12 @@
     <div>
       {% if people.has('facebook') %}
         <a href="{{ people.facebook }}" target="_blank" rel="noopener noreferer">
-          <span class="fa fa-facebook-square fa-lg" alt="Page Facebook de {{ people.name }}"/>
+          <span class="fa fa-facebook-square fa-lg" alt="Page Facebook de {{ people.name }}" />
         </a>
       {% endif %}
       {% if people.has('twitter') %}
         <a href="https://twitter.com/{{ people.twitter }}" target="_blank" rel="noopener noreferer">
-          <span class="fa fa-twitter-square fa-lg" alt="Page Facebook de {{ people.name }}"/>
+          <span class="fa fa-twitter-square fa-lg" alt="Page Facebook de {{ people.name }}" />
         </a>
       {% endif %}
     </div>
@@ -27,7 +27,9 @@
       {% endif %}
 
       {% if people.has('bio') %}
-        {{ people.bio|raw }}
+        <div class="contributor__biography">
+          {{ people.bio|raw }}
+        </div>
       {% endif %}
     </div>
 
