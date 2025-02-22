@@ -17,164 +17,6 @@ em {
   font-style: italic;
 }
 
-/* # Layout */
-
-.site-header,
-.site-main,
-.site-footer {
-  box-sizing: border-box;
-  padding: 0 16px;
-  margin: 0 auto;
-  max-width: 1024px;
-}
-
-/* ## Header */
-
-.site-header .site-title {
-  font-size: 3rem;
-  margin: 64px auto;
-  text-align: center;
-}
-
-/* ### Header bar */
-
-.site-header .header-bar {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.site-header .header-bar .social-networks .social-button .fa {
-  color: var(--grey-25);
-  font-size: 1.5rem;
-}
-
-.site-header .header-bar .search-engine {
-  background: var(--grey-25);
-  display: flex;
-  font-size: inherit;
-  margin-top: 4px;
-  padding: 2px;
-  width: 100%;
-}
-
-.site-header .header-bar .search-engine-input {
-  border: 0;
-  font-size: 1rem;
-  margin-top: 0;
-  padding: 4px;
-  width: 100%;
-}
-
-.site-header .header-bar .search-engine-button {
-  border: 0;
-  background: white;
-}
-
-@media(min-width: 768px) {
-  .site-header .header-bar .social-networks {
-    order: 1;
-    min-width: 150px;
-  }
-
-  .site-header .header-bar .cart-button {
-    order: 3;
-    min-width: 150px;
-    text-align: right;
-  }
-
-  .site-header .header-bar .search-engine {
-    margin-top: 0;
-    order: 2;
-    width: 50%;
-  }
-}
-
-/* ### Navigation */
-
-.site-header .site-navigation {
-  margin-top: 8px;
-  display: flex;
-  flex-direction: column;
-}
-
-.site-header .site-navigation .navbar-toggle {
-  margin: 0;
-}
-
-.site-header .site-navigation .navigation-item {
-  padding: 4px 0;
-}
-
-@media(min-width: 768px) {
-  .site-header .site-navigation {
-    border-radius: 0;
-    background-color: var(--grey-25);
-    flex-direction: row;
-    font-size: 1.1rem;
-    justify-content: space-evenly;
-    padding: 4px 0;
-  }
-
-  .site-header .site-navigation .navbar-header {
-    display: none;
-  }
-
-  .navbar-nav > li > a {
-    padding: 8px;
-  }
-
-  .site-header .site-navigation .navbar-collapse,
-  .site-header .site-navigation .navbar-nav {
-    width: 100%;
-  }
-
-  .site-header .site-navigation .navbar-nav {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .site-header .site-navigation a.navigation-item-link {
-    color: white;
-  }
-
-  .site-header .site-navigation a.navigation-item-link:hover {
-    color: black;
-  }
-
-}
-
-/* ## Main */
-
-.site-main {
-  border-top: 1px solid var(--grey-25);
-  border-bottom: 1px solid var(--grey-25);
-  margin: 16px auto;
-  padding: 16px;
-}
-
-/* ## Footer */
-
-.site-footer .footer-block {
-  margin-bottom: 16px;
-}
-
-@media(min-width: 768px) {
-  .site-footer {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .site-footer .footer-block {
-    width: 240px;
-  }
-
-  .site-footer .footer-biblys-logo {
-    text-align: center;
-  }
-}
-
 /* # Article page */
 
 .article__cover-image {
@@ -405,4 +247,17 @@ em {
     order: 4;
     padding: 0;
   }
+}
+
+.powered-by {
+  font-size: 0.8em;
+}
+
+.powered-by a {
+  background: #ff6600;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  padding: 2px 4px;
+  text-decoration: none;
 }
