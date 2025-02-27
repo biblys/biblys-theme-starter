@@ -32,6 +32,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="/theme/styles.css?{{ app.currentSite.getOption('assets_version') }}">
 
+  <link rel="alternate" type="application/rss+xml" title="Les derniers billets du blog" href="{{ path('feed_blog') }}">
+  <link rel="alternate" type="application/rss+xml" title="Les dernières parutions du catalogue" href="{{ path('feed_catalog') }}">
+
   {% include "layout:_analytics.html.twig" %}
 </head>
 <body>
@@ -84,8 +87,8 @@
   <footer class="site-footer mt-4 d-md-flex justify-content-between">
     <div class="footer-block footer-links mb-4">
       <div class="text-center text-md-left mb-2">
-        <a href="/feeds/blog.rss.xml" target="_blank">
-          <span aria-label="Mastodon" class="fa fa-rss-square fa-2x"></span>
+        <a href="{{ path('feed_index') }}" target="_blank">
+          <span aria-label="Flux RSS" class="fa fa-rss-square fa-2x"></span>
         </a>
       </div>
 
