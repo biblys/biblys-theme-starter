@@ -72,13 +72,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
         </p>
       </div>
 
-      {% set newItem = article.getCheapestAvailableItem('new') %}
-      {% if newItem %}
+      {% if article.getCheapestAvailableItem('new') %}
         <p>
           <span class="fa fa-square led-green"></span>
-          <strong>Neuf</strong>
-          {{ newItem.selling_price|currency(true)|raw }}
-          {% include "AppBundle:Article:_cartButton.html.twig" with { "text": "Ajouter" } %}
+          {% if article.has('price') %}
+            {{ article.price|currency(true)|raw }}
+          {% endif %}
+          {% include "AppBundle:Article:_cartButton.html.twig" %}
         </p>
       {% endif %}
 
