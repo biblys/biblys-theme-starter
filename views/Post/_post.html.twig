@@ -35,9 +35,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
         {{ article.getCartButton('Ajouter au panier')|raw }}
         <a data-wish="{{ article.id }}" class="btn btn-outline-secondary event">
           {% if article.isInWishList() %}
-            <i class="fa fa-heart red"></i> Dans mes envies
+            <i class="fa-solid fa-heart red"></i> Dans mes envies
           {% else %}
-            <i class="fa fa-heart-o"></i> Ajouter à mes envies
+            <i class="fa-regular fa-heart"></i> Ajouter à mes envies
           {% endif %}
         </a>
       {% endfor %}

@@ -74,7 +74,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
       {% if article.getCheapestAvailableItem('new') %}
         <p>
-          <span class="fa fa-square led-green"></span>
+          <span class="fa-solid fa-square led-green"></span>
           {% if article.has('price') %}
             {{ article.price|currency(true)|raw }}
           {% endif %}
@@ -107,7 +107,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
                 {{ usedItem.photoTag({ class: 'article__used-copy__photo' })|raw }}
               {% endif %}
               <p>
-                <span class="fa fa-square led-orange"></span>
+                <span class="fa-solid fa-square led-orange"></span>
                 État: {{ usedItem.condition }}
               </p>
               <p>
