@@ -24,19 +24,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   <div class="contributor">
     <h1>{{ people.name }}</h1>
 
-    <div>
-      {% if people.has('facebook') %}
-        <a href="{{ people.facebook }}" target="_blank" rel="noopener noreferer">
-          <span class="fa fa-facebook-square fa-lg" alt="Page Facebook de {{ people.name }}" />
-        </a>
-      {% endif %}
-      {% if people.has('twitter') %}
-        <a href="https://twitter.com/{{ people.twitter }}" target="_blank" rel="noopener noreferer">
-          <span class="fa fa-twitter-square fa-lg" alt="Page Facebook de {{ people.name }}" />
-        </a>
-      {% endif %}
-    </div>
-
     <div class="contributor__informations">
       {% if people.model|hasImage %}
         <img src="{{ people.model|imageUrl }}" alt="Photo de {{ people.name }}" class="contributor__photo" />
