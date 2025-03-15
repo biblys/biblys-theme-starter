@@ -67,7 +67,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 					{% set newItem = article.getCheapestAvailableItem('new') %}
 					{% if newItem %}
 						<p class="article-in-list__available-new-item">
-							<span class="fa fa-square led-green"></span>
+							<span class="fa-solid fa-square green"></span>
 							<strong>Neuf</strong>
 							{{ newItem.selling_price|currency(true)|raw }}
 							<br />
@@ -78,7 +78,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 					{% set usedItem = article.getCheapestAvailableItem('used') %}
 					{% if usedItem %}
 						<p class="article-in-list__available-used-items">
-							<span class="fa fa-square led-orange"></span>
+							<span class="fa-solid fa-square orange"></span>
 							<strong>
 								<a href="{{ path('article_show', { slug: article.url }) }}#occasion">
 									En occasion
