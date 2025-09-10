@@ -103,8 +103,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
         <div class="article__used-copies">
           {% for usedItem in usedItems %}
             <div class="article__used-copy">
-              {% if usedItem.hasPhoto %}
-                {{ usedItem.photoTag({ class: 'article__used-copy__photo' })|raw }}
+              {% if usedItem.model|hasImage %}
+                {% include "AppBundle:StockItem:_photo.html.twig" with {
+                  stockItem: usedItem.model,
+                  width: 250
+                } %}
               {% endif %}
               <p>
                 <span class="fa-solid fa-square led-orange"></span>
